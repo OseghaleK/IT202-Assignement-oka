@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Culinary Connoisseurs – Login Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-box">
+        <h1>Culinary Connoisseurs</h1>
+        <form id="ccForm" onsubmit="return validate();">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Enter First Name">
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Enter Last Name">
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="###-###-#### ext.###">
+
+            <label for="repId">Caterer ID:</label>
+            <select id="repId" name="repId">
+                <option value="">-- Select 4-Digit ID --</option>
+                <option>1234</option>
+                <option>2345</option>
+                <option>3456</option>
+                <option>4567</option>
+                <option>5678</option>
+                <option>6789</option>
+                <option>7890</option>
+                <option>8901</option>
+                <option>9012</option>
+                <option>1357</option>
+            </select>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="example@cc.com">
+
+            <label for="password">Password:</label>
+            <div class="password-container">
+                <input type="password" id="password" name="password" placeholder="Must start with special character">
+                <span id="togglePassword" class="toggle-icon">👁️</span>
+            </div>
+
+            <label for="transaction">Transaction Type:</label>
+            <select id="transaction" name="transaction">
+                <option value="">-- Select Transaction --</option>
+                <option>Search Account</option>
+                <option>Book a Catering Event</option>
+                <option>Cancel a Catering Event</option>
+                <option>Request AddOn Catering Services</option>
+                <option>Update AddOn Catering Services</option>
+                <option>Create a New Client Account</option>
+            </select>
+
+            <label for="emailConfirm">
+                <input type="checkbox" id="emailConfirm" name="emailConfirm"> Email Confirmation Requested
+            </label>
+
+            <div class="button-group">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+    <script src="cc_form.js"></script>
+</body>
+</html>
