@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Basketball Hall of Fame Inductees</title>
+
+    
+    <link rel="stylesheet" href="styles.css">
+
+    
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            margin: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: green;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        .hof-table {
+            width: 50%;
+            margin: 0 auto;                 
+            border-collapse: separate;      
+            border-spacing: 18px;           
+            padding: 8px;
+            border-top: 8px dotted purple;  
+            border-bottom: 6px dashed green;
+        }
+        .hof-table th,
+        .hof-table td {
+            border: 6px solid blue;         
+            padding: 18px 24px;             
+            text-align: center;             
+            font-weight: bold;              
+            background-color: white;       
+            vertical-align: middle;
+            min-width: 140px;
+        }
+        .hof-table th { font-size: 16px; }
+        .hof-table td { font-size: 15px; }
+
+        @media (max-width: 700px) {
+            .hof-table { width: 90%; border-spacing: 10px; }
+            .hof-table th, .hof-table td { padding: 12px; min-width: 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Basketball Hall of Fame Inductees</h1>
+
+    <table class="hof-table" aria-label="Basketball Hall of Fame Inductees">
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Year (or Status)</th>
+                <th>Position</th>
+                <th>Notable Team</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>LeBron James</td>
+                <td>TBD</td>
+                <td>Forward</td>
+                <td>Los Angeles Lakers</td>
+            </tr>
+            <tr>
+                <td>Kobe Bryant</td>
+                <td>2020</td>
+                <td>Guard</td>
+                <td>Los Angeles Lakers</td>
+            </tr>
+            <tr>
+                <td>Michael Jordan</td>
+                <td>2009</td>
+                <td>Guard</td>
+                <td>Chicago Bulls</td>
+            </tr>
+            <tr>
+                <td>Shaquille O’Neal</td>
+                <td>2016</td>
+                <td>Center</td>
+                <td>Los Angeles Lakers</td>
+            </tr>
+            <tr>
+                <td>Tracy McGrady (T-Mac)</td>
+                <td>2017</td>
+                <td>Guard/Forward</td>
+                <td>Houston Rockets</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
