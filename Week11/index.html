@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Please verify your email address</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Georgia, serif;
+            padding: 20px;
+        }
+        label {
+            font-size: 20px;
+        }
+        .error {
+            color: red;
+            font-size: 18px;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Please verify your email address</h1>
+
+<form id="emailForm">
+
+    <label>Email Address:</label>
+    <input type="text" id="email1"> *
+    <br><br>
+
+    <label>Confirm Email Address:</label>
+    <input type="text" id="email2"> *
+    <br><br>
+
+    <button type="button" id="confirmBtn">Confirm</button>
+
+    <div class="error" id="errorMsg">Emails do NOT match! Please try again.</div>
+
+</form>
+
+<script src="myscript.js"></script>
+
+</body>
+</html>
