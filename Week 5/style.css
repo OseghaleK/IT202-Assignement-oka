@@ -1,0 +1,18 @@
+.instructions {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#hoverBox {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #555;
+    border-radius: 5px;
+}
+
+#dynamicHeading {
+    color: #0077cc;
+    font-size: 30px;
+    margin-top: 25px;
+    display: none; 
