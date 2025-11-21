@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinary Connoisseurs Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-box">
+        <h1>Culinary Connoisseurs</h1>
+        <h2>Login Form</h2>
+        <form id="loginForm" method="post" action="login_process.php" onsubmit="return validateLoginForm()">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="idNumber">ID Number:</label>
+                <input type="text" id="idNumber" name="idNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="includeEmail">
+                    <input type="checkbox" id="includeEmail" name="includeEmail">
+                    Include Email Address
+                </label>
+            </div>
+            <div class="form-group" id="emailGroup" style="display: none;">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="action">Select Action:</label>
+                <select id="action" name="action" required>
+                    <option value="">-- Select an Option --</option>
+                    <option value="search">Search A Caterer's Account</option>
+                    <option value="book">Book a Client's Catering Event</option>
+                    <option value="cancel">Cancel A Client's Catering Event</option>
+                    <option value="request">Request Additional Catering Services</option>
+                    <option value="update">Update Additional Catering Services</option>
+                    <option value="create">Create A New Client Account</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn">Login</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        function validateLoginForm() {
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const idNumber = document.getElementById('idNumber').value.trim();
+            const phoneNumber = document.getElementById('phoneNumber').value.trim();
+            const includeEmail = document.getElementById('includeEmail').checked;
+            const email = document.getElementById('email').value.trim();
+            const action = document.getElementById('action').value;
+
+            if (firstName.length < 2 || !/^[a-zA-Z\s]+$/.test(firstName)) {
+                alert('First Name must be at least 2 characters and contain only letters and spaces');
+                return false;
+            }
+
+            if (lastName.length < 2 || !/^[a-zA-Z\s]+$/.test(lastName)) {
+                alert('Last Name must be at least 2 characters and contain only letters and spaces');
+                return false;
+            }
+
+            if (password.length < 6 || !/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(password)) {
+                alert('Password must be at least 6 characters and contain both letters and numbers');
+                return false;
+            }
+
+            if (!/^\d{6}$/.test(idNumber)) {
+                alert('ID Number must be exactly 6 digits');
+                return false;
+            }
+
+            if (!/^(\d{3}-\d{3}-\d{4}|\(\d{3}\) \d{3}-\d{4})$/.test(phoneNumber)) {
+                alert('Phone Number must be in format: 123-456-7890 or (123) 456-7890');
+                return false;
+            }
+
+            if (includeEmail) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Please enter a valid email address');
+                    return false;
+                }
+            }
+
+            if (action === '') {
+                alert('Please select an action from the dropdown menu');
+                return false;
+            }
+
+            return true;
+        }
+
+        document.getElementById('includeEmail').addEventListener('change', function() {
+            const emailGroup = document.getElementById('emailGroup');
+            emailGroup.style.display = this.checked ? 'block' : 'none';
+            if (this.checked) {
+                document.getElementById('email').setAttribute('required', 'required');
+            } else {
+                document.getElementById('email').removeAttribute('required');
+            }
+        });
+
+        document.getElementById('phoneNumber').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 6) {
+                value = value.slice(0, 3) + '-' + value.slice(3, 6) + '-' + value.slice(6, 10);
+            } else if (value.length >= 3) {
+                value = value.slice(0, 3) + '-' + value.slice(3);
+            }
+            e.target.value = value;
+        });
+
+        document.getElementById('idNumber').addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/\D/g, '').slice(0, 6);
+        });
+    </script>
+</body>
+</html>
