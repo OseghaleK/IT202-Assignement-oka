@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Breed Checker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="ajax.js" defer></script>
+</head>
+<body>
+    <h2>Dog Breed Lookup</h2>
+    <form onsubmit="return false;">
+        <label for="breedInput">Enter Dog Breed:</label>
+        <input type="text" id="breedInput" placeholder="Type e.g., Labr..." onkeyup="checkBreed()">
+        <div id="breedResult">Start typing a dog breed...</div>
+    </form>
+</body>
+</html> 
