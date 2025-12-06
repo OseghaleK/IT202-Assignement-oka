@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Chat Application</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h2>Simple Chat Application</h2>
+
+    <div id="user-list">
+    </div>
+
+    <form id="chat-form">
+        <label>Username:</label>
+        <input type="text" id="username" required><br><br>
+
+        <label>Password:</label>
+        <input type="password" id="password" required><br><br>
+
+        <label>Message:</label>
+        <textarea id="message" required></textarea><br><br>
+
+        <button type="button" id="send">Send</button>
+    </form>
+
+    <br>
+
+    <div>
+        <label>Listen to User:</label>
+        <input type="text" id="listen-user" placeholder="Enter username"><br><br>
+        <button id="listen">Listen</button>
+    </div>
+
+    <div id="chat-box"></div>
+</body>
+</html>
